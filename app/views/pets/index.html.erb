@@ -1,0 +1,27 @@
+<h1>My Pets</h1>
+
+
+<table id = "index">
+  <tr>
+    <th>Select</th>
+    <th>Name</th>
+    <th>Kind</th>
+  </tr>
+  <%= form_tag(new_agenda_path, method: "get") do %>
+  	<% @pets.each do |pet|  %>
+    <tr>
+      <td><%= check_box_tag 'to_calendar[]', pet.id,  checked = false, required: false %></td>
+     	<td><%= pet.name %></td>
+      <td><%= pet.pet_kind.name %></td>
+     	<td><%= link_to "Edit", edit_pet_path(pet), class: 'button', id: 'pet-index-button' %></td>
+     	<td><%= link_to "View", pet_path(pet), class: 'button', id: 'pet-index-button' %></td>
+     	<td><%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: 'Are you sure you want to delete this pet?' }, class: 'button', id: 'pet-index-button' %></td>
+    </tr>
+  	<% end %>
+    <td>
+    <%= submit_tag "Add to calendar",  class: 'button', id: 'pet-index-button' %>
+  <% end %>
+</table>
+
+
+<%= link_to "New Pet", new_pet_path(@user), class: 'button', id: 'button-page' %>

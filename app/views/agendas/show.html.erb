@@ -1,0 +1,10 @@
+<h1>Agenda Data</h1>
+<h3><b>Pet:</b> <%= @agenda.pet.name %></h3>
+<h3><b>Start Day:</b> <%= @agenda.start_day.strftime('%F') %></h3>
+<h3><b>End Day:</b> <%= @agenda.end_day.strftime('%F') %></h3>
+<h3><b>Payment:</b> <%= @agenda.total_payment %></h3>
+<h3><b>Care Needs:</b> <%= @agenda.care_needs %></h3>
+
+<%= link_to "Edit Data", edit_agenda_path(@agenda), class: 'button', id: 'button-page' %>
+
+<%= link_to "View all agendas", agendas_path(@user), class: 'button', id: 'button-page' %>

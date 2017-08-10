@@ -1,0 +1,57 @@
+// Place all the styles related to the Agenda controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#index-agenda {
+	width: 70%;
+	text-align: left;
+	position: relative;
+	left: 15%;
+}
+
+#agenda-index-button{
+	background-color: #FF9139;
+	text-align: center;
+	font-size: 90%;
+	padding: 1px 3px;
+	color: white;
+	border-radius: 8px;
+	text-decoration: none;
+	margin-bottom: 2%;
+}
+
+#agenda-index-confimation{
+	background-color: #2FD443;
+	text-align: center;
+	font-size: 90%;
+	padding: 1px 3px;
+	color: white;
+	border-radius: 8px;
+	text-decoration: none;
+	margin-bottom: 2%;
+}
+
+#agenda-index-cancel{
+
+	background-color: #d03434;
+	text-align: center;
+	font-size: 90%;
+	padding: 1px 3px;
+	color: white;
+	border-radius: 8px;
+	text-decoration: none;
+	margin-bottom: 2%;
+}
+
+#sitter-show{
+	width: 33%;
+	height: 50%;
+	float:  left;
+}
+
+#show-bottom{
+	margin-top: 30%;
+	clear: left;
+	text-align: center;
+	height: 50%;
+}

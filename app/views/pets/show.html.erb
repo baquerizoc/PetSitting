@@ -1,0 +1,13 @@
+<h1>Pet Data</h1>
+<h3><b>Owner:</b> <%= @owner %></h3>
+<h3><b>Name:</b> <%= @pet.name %></h3>
+
+<h3><b>Kind:</b> <%= @kind %></h3>
+
+<h3><b>Breed:</b> <%= @pet.breed %></h3>
+<h3><b>Size:</b> <%= @pet.size %></h3>
+<h3><b>Date of Birth:</b> <%= @pet.date_of_birth.strftime('%F') %></h3>
+
+<%= link_to "Edit Data", edit_pet_path(@pet), class: 'button', id: 'button-page' %>
+
+<%= link_to "View all Pets", pets_path(@user), class: 'button', id: 'button-page' %>

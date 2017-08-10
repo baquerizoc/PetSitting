@@ -1,0 +1,9 @@
+<h1>Data</h1>
+
+<h3><b>Name:</b> <%= @user.name %></h3>
+<h3><b>Lastname:</b> <%= @user.lastname %></h3>
+<h3><b>Phone:</b> <%= @user.phone %></h3>
+<h3><b>Address:</b> <%= @user.address %></h3>
+<h3><b>Date of birth:</b> <%=  @user.date_of_birth.strftime('%F') %></h3>
+
+<%= link_to "Edit Data", edit_user_path(@user), class: 'button', id: 'button-page' %>
