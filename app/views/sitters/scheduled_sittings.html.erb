@@ -1,0 +1,27 @@
+<h1>Scheduled Sittings</h1>
+
+<table id = "index-agenda">
+  <tr>
+    <th>Pet</th>
+    <th>Kind</th>
+    <th>Breed</th>
+    <th>Start Day</th>
+    <th>End Day</th>
+  </tr>
+  	<% @agendas.each do |agenda|  %>
+   <tr>
+	 <td><%= agenda.pet.name %></td>
+	 <td><%= agenda.pet.pet_kind.name %></td>
+	 <td><%= agenda.pet.breed %></td>
+	 <td><%= agenda.start_day.strftime('%F') %></td>
+	 <td><%= agenda.end_day.strftime('%F') %></td>
+
+	 <td><%= link_to "View Confirmation", sitters_confirmation_path(agenda), class: 'button', id: 'agenda-index-button' %></td>
+
+	 <td><%= link_to "Cancel", sitter_path(agenda), method: :delete, data: { confirm: 'Are you sure you want to cancel?' }, class: 'button', id: 'agenda-index-cancel' %></td>
+
+	</tr>
+  	<% end %>
+
+
+</table>

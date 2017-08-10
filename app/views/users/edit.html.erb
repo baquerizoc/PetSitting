@@ -1,0 +1,35 @@
+<h1>Data</h1>
+
+<%= form_for(@user) do |f| %>
+
+	 <div class="field">
+	 	<h2><%= f.label :name %><br /></h2>
+    	<%= f.text_field :name, autofocus: true %>
+	 </div>
+
+	 <div class="field">
+	 	<h2><%= f.label :lastname %><br /></h2>
+    	<%= f.text_field :lastname %>
+	 </div>
+
+	 <div class="field">
+	 	<h2><%= f.label :phone %><br /></h2>
+    	<%= f.text_field :phone %>
+	 </div>
+
+	 <div class="field">
+	 	<h2><%= f.label :address %><br /></h2>
+    	<%= f.text_field :address %>
+	 </div>
+
+	 <div class="field">
+	 	<h2><%= f.label :date_of_birth %><br /></h2>
+    	<%= f.date_field :date_of_birth %>
+	 </div>	
+
+	<div class="actions">
+    	<%= f.submit "Save Data",  class: 'button', id: 'submits' %>
+  	</div>
+
+<% end %>
+

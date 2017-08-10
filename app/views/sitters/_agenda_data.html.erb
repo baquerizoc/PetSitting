@@ -1,0 +1,28 @@
+<div id = "sitter-show">
+	<h4>Owner Data</h4>
+	<h3><b>Name: </b><%= @agenda.pet.user.name%></h3>
+	<h3><b>Lastname:</b><%= @agenda.pet.user.lastname%></h3>
+	<h3><b>Email: </b><%= @agenda.pet.user.email%></h3>
+	<h3><b>Phone Number: </b><%= @agenda.pet.user.phone%></h3>
+	<h3><b>Address: </b><%= @agenda.pet.user.address%></h3>
+</div>
+
+<div id = "sitter-show">
+	<h4>Pet Data</h4>
+	<h3><b>Pet:</b> <%= @agenda.pet.name %></h3>
+	<h3><b>Kind: </b><%= @agenda.pet.pet_kind.name%></h3>
+	<h3><b>Breed: </b><%= @agenda.pet.breed%></h3>
+	<h3><b>Size: </b><%= @agenda.pet.size%></h3>
+	<h3><b>Date of Birth: </b><%= @agenda.pet.date_of_birth.strftime('%F')%></h3>
+</div>
+
+<div id = "sitter-show">
+	<h4>Sitting Data</h4>
+	<h3><b>Start Day:</b> <%= @agenda.start_day.strftime('%F') %></h3>
+	<h3><b>End Day:</b> <%= @agenda.end_day.strftime('%F') %></h3>
+	<h3><b>Payment:</b> <%= @agenda.total_payment %></h3>
+	<h3><b>Care Needs:</b> <%= @agenda.care_needs %></h3>
+	<%unless @agenda.user == nil%>
+		<h3><b>Sitter: </b><%= @agenda.user.name%></h3>
+	<%end%>
+</div>

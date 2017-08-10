@@ -1,0 +1,10 @@
+	 <h1>Thank You <%=@agenda.user.name%>!</h1>
+	 <h4>You have succesfully signed up to take care of <%= @agenda.pet.name %>, here are the details: </h4>
+
+	 <%= render "agenda_data" %>
+
+	<div id = "show-bottom">
+
+		 <td><%= link_to "Cancel", sitter_path(@agenda), method: :delete, data: { confirm: 'Are you sure you want to cancel?' }, class: 'button', id: 'button-page' %></td>
+
+	</div>

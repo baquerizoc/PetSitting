@@ -1,0 +1,29 @@
+ <h1>Available Pet to Sit</h1>
+
+<table id = "index-agenda">
+  <tr>
+    <th>Pet</th>
+    <th>Kind</th>
+    <th>Breed</th>
+    <th>Start Day</th>
+    <th>End Day</th>
+    <th>Cost</th>
+    <th>Care Needs</th>
+  </tr>
+  	<% @agendas.each do |agenda|  %>
+    <tr>
+	 <td><%= agenda.pet.name %></td>
+	 <td><%= agenda.pet.pet_kind.name %></td>
+	 <td><%= agenda.pet.breed %></td>
+	 <td><%= agenda.start_day.strftime('%F') %></td>
+	 <td><%= agenda.end_day.strftime('%F') %></td>
+	 <td><%= agenda.total_payment %></td>
+	 <td><%= agenda.care_needs %></td>
+
+	 <td><%= link_to "View", sitter_path(agenda.id), class: 'button', id: 'agenda-index-button' %></td>
+    
+    </tr>
+  	<% end %>
+
+
+</table>

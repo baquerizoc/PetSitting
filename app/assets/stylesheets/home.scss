@@ -1,0 +1,147 @@
+$tittles : #AA0050;
+$subtittles : #FF9540;
+$reg-text : #FF7F18;
+$big-buttons : #AA0050;
+$small-buttons : #AA0050;
+$nav-bar : #E56600;
+
+h1{
+	color: $tittles;
+	text-align: center;
+	font-size: 250%;
+	margin: 2%;
+}
+
+#button-page{
+	background-color: $big-buttons;
+	text-align: center;
+	font-size: 140%;
+	color: white;
+	border-radius: 10px;
+	text-decoration: none;
+	margin: 3%;
+}
+
+#submits{
+	background-color: $small-buttons;
+	text-align: center;
+	font-size: 100%;
+	color: white;
+	border-radius: 10px;
+	text-decoration: none;
+	margin-bottom: 2%;
+} 
+
+button > a {
+	text-decoration: none;
+}
+
+div {
+	text-align: center;
+	margin-top: 5%;
+
+}
+
+#maindiv {
+	width: 50%;
+	height: 60%;
+	position: fixed;
+	top: 10%;
+	left: 25%;
+	border-radius: 18px;
+}
+
+#navbar1 {
+	width: 60%;
+	height: 8%;
+	color: white;
+	font-size: 120%;
+	text-align: left;
+	background-color: $nav-bar;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	margin-top: 0%;
+	float: left;
+}
+#navbar2 {
+	width: 40%;
+	height: 8%;
+	color: white;
+	font-size: 120%;
+	text-align: right;
+	background-color: $nav-bar;
+	position: fixed;
+	top: 0%;
+	left: 60%;
+	margin-top: 0%;
+	float: left;
+}
+
+#rest {
+	width: 100%;
+	position: absolute;
+	top: 10%;
+	left: 0%;
+}
+h2{
+	color: $subtittles;
+	text-align: center;
+	font-size: 120%;
+	margin: 0%;
+}
+
+h3{
+	color: $reg-text;
+	text-align: center;
+	font-size: 120%;
+	margin: 0%;
+}
+
+
+h3 > a {
+	text-decoration: none;
+	color: $reg-text;
+}
+
+h3 > b {
+
+	font-weight: lighter;
+}
+
+h4{
+	color: $tittles;
+	text-align: center;
+	font-size: 150%;
+	margin: 3%;
+}
+
+h4 > b {
+
+	font-weight: lighter;
+}
+
+#alert-login{
+	text-align: center;
+	color: red;
+	font-size: 100%;
+}
+
+#pages{
+	color: white;
+	font-size: 100%;
+}
+
+#navbar2 > a {
+	text-decoration: none;
+	text-align: left;
+}
+#navbar1 > a {
+	text-decoration: none;
+	text-align: left;
+}
+
+
+
+
+
