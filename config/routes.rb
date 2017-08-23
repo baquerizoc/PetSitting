@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :agendas
   resources :pets
   resources :sitters
+  resources :admin
 
   root to: "home#index"
 

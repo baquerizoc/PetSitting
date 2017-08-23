@@ -1,4 +1,8 @@
 <h1>Agenda Data</h1>
+
+<%if current_user.admin?%>
+	<h3><b>Owner:</b> <%= @agenda.pet.user.name %></h3>
+<%end%>
 <h3><b>Pet:</b> <%= @agenda.pet.name %></h3>
 <h3><b>Start Day:</b> <%= @agenda.start_day.strftime('%F') %></h3>
 <h3><b>End Day:</b> <%= @agenda.end_day.strftime('%F') %></h3>
@@ -7,4 +11,10 @@
 
 <%= link_to "Edit Data", edit_agenda_path(@agenda), class: 'button', id: 'button-page' %>
 
+<%= link_to "Delete", agenda_path(@agenda), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'button', id: 'button-page' %>
+
 <%= link_to "View all agendas", agendas_path(@user), class: 'button', id: 'button-page' %>
+
+<%if current_user.admin?%>
+	<%= link_to "View Owner", user_path(@agenda.pet.user), class: 'button', id: 'button-page' %>
+<%end%>
