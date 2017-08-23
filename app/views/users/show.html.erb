@@ -7,3 +7,7 @@
 <h3><b>Date of birth:</b> <%=  @user.date_of_birth.strftime('%F') %></h3>
 
 <%= link_to "Edit Data", edit_user_path(@user), class: 'button', id: 'button-page' %>
+
+<%if current_user.admin?%>
+	<%= link_to "Delete User", user_path(@user), class: 'button', id: 'button-page', method: :delete , data: { confirm: "Are you sure you want to delete this User?" } %>
+<%end%>

@@ -11,3 +11,7 @@
 <%= link_to "Edit Data", edit_pet_path(@pet), class: 'button', id: 'button-page' %>
 
 <%= link_to "View all Pets", pets_path(@user), class: 'button', id: 'button-page' %>
+
+<%if current_user.admin?%>
+	<%= link_to "View Owner", user_path(@pet.user), class: 'button', id: 'button-page' %>
+<%end%>

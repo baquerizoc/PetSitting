@@ -1,4 +1,6 @@
 class SittersController < ApplicationController
+  
+
 	def index
     	@agendas = Agenda.where(user: nil)
   	end
@@ -9,6 +11,7 @@ class SittersController < ApplicationController
 
   def confirmation
   	@agenda = Agenda.find(params[:id])
+    authorize! :confirmation, @agenda unless (@agenda.user.blank? || @agenda.user == current_user)
     @agenda.user_id = current_user.id
     @agenda.save!
   end

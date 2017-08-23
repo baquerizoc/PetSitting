@@ -1,14 +1,19 @@
 class AgendasController < ApplicationController
+  load_and_authorize_resource
 
   def index
+    if current_user.admin?
+      @agendas = Agenda.all
+    else
     @apet = Pet.where(user_id: current_user)
     @agendas = Agenda.where(pet_id: @apet.ids)
+    end
   end
 
   def create
     agendas = params[:agendas]
     agendas.each do |agenda|
-      agenda = Agenda.new(agenda_params(agenda))
+      agenda = Agenda.new(agenda_params_permited(agenda))
       agenda.save!
     end
 
@@ -22,14 +27,14 @@ class AgendasController < ApplicationController
 
   def new
     pets_to_add = params[:to_calendar]
-    pets_to_add = Pet.where(id: pets_to_add)
+    pets_to_add = Pet.where(id: pets_to_add, user: current_user)
     @agendas = []
     pets_to_add.each do |pet|
       @agendas << Agenda.new(pet: pet)
     end
   end
 
-  def agenda_params(params)
+  def agenda_params_permited(params)
     params.permit(:start_day, :end_day, :total_payment, :care_needs, :pet_id)
   end
 

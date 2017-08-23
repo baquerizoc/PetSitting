@@ -1,6 +1,11 @@
 
 <%= form_for(@pet) do |f| %>
 
+	<%if current_user.admin?%>
+  		<h2><%= f.label :pet_user %><br /></h2>
+    	<%= f.collection_select(:user_id, @owners, :id, :name) %>
+  	<%end%>
+
 	 <div class="field">
 	 	<h2><%= f.label :name %><br /></h2>
     	<%= f.text_field :name, autofocus: true %>
@@ -30,5 +35,6 @@
 	<div class="actions">
     	<%= f.submit "Save Data",  class: 'button', id: 'submits' %>
   	</div>
+
 
   <% end %>

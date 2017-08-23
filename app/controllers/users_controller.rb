@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def edit
   	@user = User.find(params[:id])
@@ -18,6 +19,12 @@ class UsersController < ApplicationController
   end
   
   def index
+    @users = User.all
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy!
   end
 
   def show

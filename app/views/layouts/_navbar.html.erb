@@ -1,12 +1,25 @@
 <div class = "container" id = "navbar1">
 
+
 	<%= link_to "My Account", user_path(current_user), class: 'button', id: 'pages' %> |
-	<%= link_to "My Pets", pets_path(@user), class: 'button', id: 'pages' %> |
 	<%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'button', id: 'pages'%> |
-	<%= link_to "My Calendars", agendas_path, class: 'button', id: 'pages'%>
-	</div><div class = "container" id = "navbar2">
+
+	<%if current_user.admin?%>
+		<%= link_to "Manage Pets", pets_path(@user), class: 'button', id: 'pages' %> |
+		<%= link_to "Manage Calendars", agendas_path, class: 'button', id: 'pages'%> |
+		<%= link_to "Manage Users", users_path, class: 'button', id: 'pages'%>
+
+	<%else%>
+		<%= link_to "My Pets", pets_path(@user), class: 'button', id: 'pages' %> |
+		<%= link_to "My Calendars", agendas_path, class: 'button', id: 'pages'%>
+	<%end%>
+	
+	
+	</div>
+
+	<div class = "container" id = "navbar2">
+	<%unless current_user.admin?%>
 	<%= link_to "Available Pets", sitters_path, class: 'button', id: 'pages'%> |
 	<%= link_to "Scheduled Sittings", scheduled_sittings_path, class: 'button', id: 'pages'%>
-
-
+	<%end%>
 </div>
